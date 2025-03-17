@@ -9,7 +9,7 @@ Graph::Graph(const int& countOfVertices, const std::vector<std::pair<int, int>>&
 }
 
 std::vector<int> Graph::findShortestDistances(int& startVertex) const {
-    std::vector<int> distances(countOfVertices, sizeof(int));
+    std::vector<int> distances(countOfVertices, -1);
     std::queue<int> queue;
     queue.push(startVertex);
     distances[startVertex] = 0;
@@ -17,7 +17,7 @@ std::vector<int> Graph::findShortestDistances(int& startVertex) const {
         int current = queue.front();
         queue.pop();
         for (int neighbor : adjacencyList[current]) {
-            if (distances[neighbor] == sizeof(int)) {
+            if (distances[neighbor] == -1) {
                 distances[neighbor] = distances[current] + 1;
                 queue.push(neighbor);
             }
