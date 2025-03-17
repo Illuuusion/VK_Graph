@@ -8,7 +8,7 @@
 class Graph {
 private:
     int countOfVertices;
-	int countOfEdges;
+    int countOfEdges;
     std::vector<std::vector<int>> adjacencyList;
 
 public:

@@ -7,9 +7,9 @@
 
 class GraphFileReader : public BaseFileReader {
 private:
-	int countOfEdges;
+    int countOfEdges;
     int countOfVertices;
-	int start;
+    int start;
     std::vector<std::pair<int, int>> paths;
 
 public:
@@ -17,9 +17,9 @@ public:
     ~GraphFileReader() override = default;
     void readFile() override;
     const int& getCountOfVertices() const;
-	const int& getCountOfEdges() const;
+    const int& getCountOfEdges() const;
     const std::vector<std::pair<int, int>>& getPaths() const;
-	const int& getStart() const;
+    const int& getStart() const;
 };
 
 #endif // GRAPHFILEREADER_H
